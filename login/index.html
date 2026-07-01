@@ -23,14 +23,13 @@
     <button class="ghost small" data-action="logout" hidden>로그아웃</button>
   </div>
   <main class="page-shell">
-
-    <section class="auth-wrap card">
+    <section class="auth-wrap card auth-card">
       <span class="eyebrow">로그인</span>
       <h1>작업실로 들어가기</h1>
       <p class="muted">Google 계정 또는 이메일/비밀번호로 로그인합니다.</p>
       <div class="form">
         <button class="secondary" data-google-login>Google로 로그인</button>
-        <div class="notice">Supabase 환경변수를 넣지 않으면 자동으로 데모 로그인이 작동합니다.</div>
+        <div class="notice" data-auth-warning hidden></div>
       </div>
       <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
       <form class="form" data-login-form>
@@ -40,7 +39,6 @@
         <a class="mini" href="/signup/">계정이 없다면 가입하기</a>
       </form>
     </section>
-
   </main>
   <nav class="mobile-nav" aria-label="모바일 메뉴">
     <a href="/dashboard/">홈</a>
