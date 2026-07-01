@@ -4,14 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler pages dev .",
-    "deploy": "wrangler pages deploy .",
-    "check": "node --check functions/api/projects/create.js && node --check functions/_lib/supabase.js"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.45.4"
-  },
-  "devDependencies": {
-    "wrangler": "^4.0.0"
+    "check": "node --check functions/api/projects/create.js && node --check functions/_lib/supabase.js && node --check functions/_lib/ai.js"
   }
 }
