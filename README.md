@@ -41,12 +41,32 @@ SUPABASE_URL=https://xxxx.supabase.co
 SUPABASE_ANON_KEY=public-anon-key
 SUPABASE_SERVICE_ROLE_KEY=service-role-key
 APP_SECRET=32자_이상_랜덤_문자열
-AI_ENDPOINT=선택_자체_AI_프록시
-AI_API_KEY=선택
 TURNSTILE_SECRET_KEY=선택
+
+# AI: GPT 우선, 크레딧/빌링/쿼터 제한 시 Gemini로 자동 전환
+OPENAI_API_KEY=Cloudflare_Pages_환경변수에_설정
+OPENAI_MODEL=gpt-4.1-mini
+GEMINI_API_KEY=Cloudflare_Pages_환경변수에_설정
+GEMINI_MODEL=gemini-2.0-flash
+AI_MAX_OUTPUT_TOKENS=900
+AI_TEMPERATURE=0.7
+
+# 선택: 기존 자체 AI 프록시를 유지하고 싶을 때만 사용
+AI_ENDPOINT=선택_자체_AI_프록시
+AI_API_KEY=선택_자체_AI_프록시_키
 ```
 
-`SUPABASE_SERVICE_ROLE_KEY`, `APP_SECRET`, `AI_API_KEY`는 절대 프론트엔드에 넣지 말고 Cloudflare Pages 환경변수로만 보관하세요.
+`SUPABASE_SERVICE_ROLE_KEY`, `APP_SECRET`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `AI_API_KEY`는 절대 프론트엔드에 넣지 말고 Cloudflare Pages 환경변수로만 보관하세요.
+
+## AI 동작 방식
+
+AI 요청은 항상 `/functions/api/ai/`를 통과합니다. 프론트엔드에는 AI 키를 넣지 않습니다.
+
+1. `OPENAI_API_KEY`가 있으면 GPT를 먼저 호출합니다.
+2. GPT 호출 결과가 빌링, 크레딧 부족, 쿼터 초과, 사용량 제한, rate limit 계열 오류이면 Gemini로 자동 재시도합니다.
+3. `OPENAI_API_KEY`가 없고 `GEMINI_API_KEY`만 있으면 Gemini를 바로 사용합니다.
+4. 두 키가 모두 없으면 데모 안내 응답을 반환합니다.
+5. 기존 `AI_ENDPOINT`/`AI_API_KEY` 방식은 하위 호환용으로 남겨 두었습니다.
 
 ## 배포
 
