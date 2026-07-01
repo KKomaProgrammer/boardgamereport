@@ -4,39 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>팀원 관리 · BoardLab Studio</title>
-  <meta name="description" content="보드게임부 발표 제작 협업 플랫폼 BoardLab Studio" />
+  <meta name="description" content="영상 편집과 PPT 제작 협업 플랫폼 BoardLab Studio" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="/assets/js/app.js" defer></script>
 </head>
 <body data-page="team">
-  <div class="topbar">
-    <a class="brand" href="/" aria-label="BoardLab Studio 홈">
-      <span class="brand-mark">▣</span><span>BoardLab Studio</span>
-    </a>
-    <nav class="topnav" aria-label="상단 메뉴">
-      <a href="/dashboard/">대시보드</a>
-      <a href="/notifications/" class="notif-link">알림<span class="dot" data-notif-dot hidden></span></a>
-      <a href="/settings/account/">설정</a>
-    </nav>
-    <button class="ghost small" data-action="logout" hidden>로그아웃</button>
-  </div>
+  <div class="topbar"><a class="brand" href="/"><span class="brand-mark">▣</span><span>BoardLab Studio</span></a><nav class="topnav"><a href="/dashboard/">대시보드</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><button class="ghost small" data-action="logout" hidden>로그아웃</button></div>
   <main class="page-shell">
-    <section class="page-title"><span class="eyebrow">팀원 관리</span><h1 data-project-title>프로젝트</h1>
-      <div class="tabs">
-        <a class="tab" data-tab="overview" href="/project/">개요</a><a class="tab" data-tab="video_workspace" href="/project/video/">영상 제작<span data-tab-check="video_workspace"></span></a><a class="tab" data-tab="ppt_workspace" href="/project/ppt/">PPT 제작<span data-tab-check="ppt_workspace"></span></a><a class="tab" data-tab="boardgame_workspace" href="/project/boardgame/">보드게임 제작<span data-tab-check="boardgame_workspace"></span></a><a class="tab" data-tab="team" href="/project/team/">팀원</a><a class="tab" data-tab="share" href="/project/share/">공유</a><span class="save-state" data-save-state data-state="saved">저장됨</span>
-      </div>
-    </section>
-    <section class="layout">
-      <aside class="sidebar"><a class="side-link active">닉네임 검색</a><a class="side-link">권한 설정</a><a class="side-link">AI 사용 설정</a></aside>
-      <div class="grid">
-        <section class="card"><h2>팀원 초대</h2><form class="form" data-search-user><div class="field"><label>닉네임 검색</label><input name="query" placeholder="친구 닉네임"></div><button>검색</button></form><div data-search-results style="margin-top:14px"></div></section>
-        <section class="card"><h2>현재 팀원</h2><div class="grid" data-members></div></section>
-      </div>
-    </section>
+    <section class="page-title"><span class="eyebrow">팀원 관리</span><h1 data-project-title>프로젝트</h1><div class="tabs"><a class="tab" href="/project/">개요</a><a class="tab" href="/project/video/">영상 편집</a><a class="tab" href="/project/ppt/">PPT 제작</a><a class="tab active" href="/project/team/">팀원</a><a class="tab" href="/project/share/">공유</a><span class="save-state" data-save-state data-state="saved">저장됨</span></div></section>
+    <section class="layout"><aside class="sidebar"><a class="side-link active">닉네임 검색</a><a class="side-link">권한 설정</a><a class="side-link">AI 사용 설정</a></aside><div class="grid"><section class="card"><h2>팀원 초대</h2><form class="form" data-search-user><div class="field"><label>닉네임 검색</label><input name="query" placeholder="친구 닉네임"></div><button>검색</button></form><div data-search-results style="margin-top:14px"></div></section><section class="card"><h2>현재 팀원</h2><div class="grid" data-members></div></section></div></section>
   </main>
-  <nav class="mobile-nav" aria-label="모바일 메뉴"><a href="/dashboard/">홈</a><a href="/project/">프로젝트</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <nav class="mobile-nav"><a href="/dashboard/">홈</a><a href="/project/">프로젝트</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
