@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>홈 · BoardLab Studio</title>
+  <meta name="description" content="보드게임부 발표 제작 협업 플랫폼 BoardLab Studio" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+</head>
+<body data-page="landing">
+  <div class="topbar">
+    <a class="brand" href="/" aria-label="BoardLab Studio 홈">
+      <span class="brand-mark">▣</span><span>BoardLab Studio</span>
+    </a>
+    <nav class="topnav" aria-label="상단 메뉴">
+      <a href="/dashboard/">대시보드</a>
+      <a href="/notifications/" class="notif-link">알림<span class="dot" data-notif-dot hidden></span></a>
+      <a href="/settings/account/">설정</a>
+    </nav>
+    <button class="ghost small" data-action="logout" hidden>로그아웃</button>
+  </div>
+  <main class="page-shell">
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">🎲 보드게임부 발표 제작 협업 플랫폼</span>
+        <h1>보드게임부 발표 준비를 한 곳에서</h1>
+        <p class="lead">영상 콘티, 발표용 PPT, 보드게임 직접 제작을 하나의 프로젝트 안에서 관리합니다. 제작 방식을 이동해도 작업 내용과 팀원 권한은 그대로 저장됩니다.</p>
+        <div class="hero-actions">
+          <button data-start>시작하기</button>
+          <a class="button ghost" href="/login/">로그인</a>
+        </div>
+      </div>
+      <div class="grid">
+        <a class="card choice-card" href="/project/video/"><div><div class="icon">🎬</div><h2>영상 제작</h2><p class="muted">장면, 대본, 자료를 순서대로 정리</p></div><b>콘티 만들기 →</b></a>
+        <a class="card choice-card" href="/project/ppt/"><div><div class="icon">📊</div><h2>PPT 제작</h2><p class="muted">슬라이드와 발표자 노트를 함께 제작</p></div><b>슬라이드 만들기 →</b></a>
+        <a class="card choice-card" href="/project/boardgame/"><div><div class="icon">🎲</div><h2>보드게임 직접 제작</h2><p class="muted">규칙, 카드, 말판, 점수표 설계</p></div><b>게임 만들기 →</b></a>
+      </div>
+    </section>
+
+  </main>
+  <nav class="mobile-nav" aria-label="모바일 메뉴">
+    <a href="/dashboard/">홈</a>
+    <a href="/project/">프로젝트</a>
+    <a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a>
+    <a href="/settings/account/">설정</a>
+  </nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

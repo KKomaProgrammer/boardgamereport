@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>알림 · BoardLab Studio</title>
+  <meta name="description" content="보드게임부 발표 제작 협업 플랫폼 BoardLab Studio" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+</head>
+<body data-page="notifications">
+  <div class="topbar">
+    <a class="brand" href="/" aria-label="BoardLab Studio 홈">
+      <span class="brand-mark">▣</span><span>BoardLab Studio</span>
+    </a>
+    <nav class="topnav" aria-label="상단 메뉴">
+      <a href="/dashboard/">대시보드</a>
+      <a href="/notifications/" class="notif-link">알림<span class="dot" data-notif-dot hidden></span></a>
+      <a href="/settings/account/">설정</a>
+    </nav>
+    <button class="ghost small" data-action="logout" hidden>로그아웃</button>
+  </div>
+  <main class="page-shell">
+
+    <section class="page-title"><span class="eyebrow">알림</span><h1>초대와 공동 작업 업데이트</h1><p class="lead">초대, 권한 변경, 댓글, 공유 링크 생성 알림을 확인합니다.</p><button class="ghost" data-read-all>모두 확인 처리</button></section>
+    <section class="grid" data-notifications></section>
+
+  </main>
+  <nav class="mobile-nav" aria-label="모바일 메뉴">
+    <a href="/dashboard/">홈</a>
+    <a href="/project/">프로젝트</a>
+    <a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a>
+    <a href="/settings/account/">설정</a>
+  </nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

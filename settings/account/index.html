@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>계정 설정 · BoardLab Studio</title>
+  <meta name="description" content="보드게임부 발표 제작 협업 플랫폼 BoardLab Studio" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+</head>
+<body data-page="account">
+  <div class="topbar"><a class="brand" href="/"><span class="brand-mark">▣</span><span>BoardLab Studio</span></a><nav class="topnav"><a href="/dashboard/">대시보드</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><button class="ghost small" data-action="logout" hidden>로그아웃</button></div>
+  <main class="page-shell"><section class="auth-wrap card"><span class="eyebrow">계정 설정</span><h1>ID, 비밀번호, 닉네임 변경</h1><form class="form" data-account-form><div class="field"><label>이메일 ID</label><input name="email" type="email"></div><div class="field"><label>새 비밀번호</label><input name="password" type="password" placeholder="변경할 때만 입력"></div><div class="field"><label>닉네임</label><input name="nickname"></div><button>저장</button></form></section></main>
+  <nav class="mobile-nav"><a href="/dashboard/">홈</a><a href="/project/">프로젝트</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

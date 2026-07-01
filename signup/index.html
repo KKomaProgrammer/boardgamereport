@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>회원가입 · BoardLab Studio</title>
+  <meta name="description" content="보드게임부 발표 제작 협업 플랫폼 BoardLab Studio" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+</head>
+<body data-page="signup">
+  <div class="topbar"><a class="brand" href="/"><span class="brand-mark">▣</span><span>BoardLab Studio</span></a><nav class="topnav"><a href="/dashboard/">대시보드</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><button class="ghost small" data-action="logout" hidden>로그아웃</button></div>
+  <main class="page-shell"><section class="auth-wrap card"><span class="eyebrow">회원가입</span><h1>계정 만들기</h1><form class="form" data-signup-form><div class="field"><label>이메일 ID</label><input name="email" type="email" placeholder="student@example.com" required></div><div class="field"><label>비밀번호</label><input name="password" type="password" minlength="8" required></div><div class="field"><label>비밀번호 확인</label><input name="password2" type="password" minlength="8" required></div><button type="submit">가입 후 닉네임 설정</button><a class="mini" href="/login/">이미 계정이 있습니다</a></form></section></main>
+  <nav class="mobile-nav"><a href="/dashboard/">홈</a><a href="/project/">프로젝트</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

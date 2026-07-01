@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>대시보드 · BoardLab Studio</title>
+  <meta name="description" content="보드게임부 발표 제작 협업 플랫폼 BoardLab Studio" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <div class="topbar">
+    <a class="brand" href="/" aria-label="BoardLab Studio 홈">
+      <span class="brand-mark">▣</span><span>BoardLab Studio</span>
+    </a>
+    <nav class="topnav" aria-label="상단 메뉴">
+      <a href="/dashboard/">대시보드</a>
+      <a href="/notifications/" class="notif-link">알림<span class="dot" data-notif-dot hidden></span></a>
+      <a href="/settings/account/">설정</a>
+    </nav>
+    <button class="ghost small" data-action="logout" hidden>로그아웃</button>
+  </div>
+  <main class="page-shell">
+
+    <section class="page-title">
+      <span class="eyebrow">대시보드</span>
+      <h1 id="welcome">발표 작업실</h1>
+      <p class="lead">내 프로젝트와 공동 작업 프로젝트를 한 번에 확인합니다.</p>
+    </section>
+    <section class="layout">
+      <aside class="sidebar">
+        <a class="side-link active" href="/dashboard/">프로젝트</a>
+        <a class="side-link" href="/notifications/">초대·알림</a>
+        <a class="side-link" href="/settings/account/">계정 설정</a>
+      </aside>
+      <div class="grid">
+        <section class="card">
+          <h2>새 프로젝트 만들기</h2>
+          <form class="form" data-create-project>
+            <div class="grid two"><div class="field"><label>제목</label><input name="title" placeholder="보드게임 발표" required></div><div class="field"><label>제작 방식</label><select name="mode"><option value="ppt">PPT 제작</option><option value="video">영상 제작</option><option value="boardgame">보드게임 제작</option></select></div></div>
+            <div class="field"><label>설명</label><input name="description" placeholder="발표 주제나 팀 목표"></div>
+            <button type="submit">프로젝트 생성</button>
+          </form>
+        </section>
+        <section>
+          <h2>프로젝트 목록</h2>
+          <div class="grid two" data-project-list></div>
+        </section>
+      </div>
+    </section>
+
+  </main>
+  <nav class="mobile-nav" aria-label="모바일 메뉴">
+    <a href="/dashboard/">홈</a>
+    <a href="/project/">프로젝트</a>
+    <a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a>
+    <a href="/settings/account/">설정</a>
+  </nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
