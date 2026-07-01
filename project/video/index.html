@@ -3,18 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>영상 제작 · BoardLab Studio</title>
-  <meta name="description" content="보드게임부 발표 제작 협업 플랫폼 BoardLab Studio" />
+  <title>영상 편집 · BoardLab Studio</title>
+  <meta name="description" content="영상 편집과 PPT 제작 협업 플랫폼 BoardLab Studio" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/umd/ffmpeg.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/util@0.12.1/dist/umd/index.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 </head>
 <body data-page="video">
   <div class="topbar"><a class="brand" href="/"><span class="brand-mark">▣</span><span>BoardLab Studio</span></a><nav class="topnav"><a href="/dashboard/">대시보드</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><button class="ghost small" data-action="logout" hidden>로그아웃</button></div>
   <main class="page-shell">
-    <section class="page-title"><span class="eyebrow">영상 제작</span><h1 data-project-title>프로젝트</h1><div class="tabs"><a class="tab" href="/project/">개요</a><a class="tab" href="/project/video/">영상 제작</a><a class="tab" href="/project/ppt/">PPT 제작</a><a class="tab" href="/project/boardgame/">보드게임 제작</a><a class="tab" href="/project/team/">팀원</a><a class="tab" href="/project/share/">공유</a><span class="save-state" data-save-state data-state="saved">저장됨</span></div></section>
-    <section class="workspace"><aside class="panel"><div class="row"><h2>장면</h2><button class="small" data-add-scene>추가</button></div><div data-scenes></div></aside><section class="panel"><h2>콘티 카드</h2><div data-scene-editor></div></section><aside class="panel"><h2>AI·팀 패널</h2><button class="soft" data-ai-video>대본 다듬기</button><div data-ai-result style="margin-top:12px"></div><hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><p class="mini">마우스 위치와 현재 편집 블록을 팀원 상태로 표시하도록 확장할 수 있습니다.</p></aside></section>
+    <section class="page-title"><span class="eyebrow">영상 편집</span><h1 data-project-title>프로젝트</h1><div class="tabs"><a class="tab" href="/project/">개요</a><a class="tab active" href="/project/video/">영상 편집</a><a class="tab" href="/project/ppt/">PPT 제작</a><a class="tab" href="/project/team/">팀원</a><a class="tab" href="/project/share/">공유</a><span class="save-state" data-save-state data-state="saved">저장됨</span></div></section>
+    <section class="workspace">
+      <aside class="panel"><div class="row"><h2>장면</h2><button class="small" data-add-scene>추가</button></div><div data-scenes></div></aside>
+      <section class="panel"><h2>콘티 카드</h2><div data-scene-editor></div><hr style="border:0;border-top:1px solid var(--line);margin:18px 0"><h2>영상 편집</h2><div class="form"><input type="file" data-video-file><video data-video-preview controls style="width:100%;border-radius:18px;background:#000;margin-top:8px"></video><div class="grid two"><div class="field"><label>시작 초</label><input type="number" min="0" step="0.1" value="0" data-trim-start></div><div class="field"><label>끝 초</label><input type="number" min="0" step="0.1" value="10" data-trim-end></div></div><button data-export-video>내보내기</button><div data-video-result></div></div></section>
+      <aside class="panel"><h2>AI·팀 패널</h2><button class="soft" data-ai-video>대본 다듬기</button><div data-ai-result style="margin-top:12px"></div><hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><p class="mini">브라우저 영상 처리 라이브러리를 사용합니다.</p></aside>
+    </section>
   </main>
   <nav class="mobile-nav"><a href="/dashboard/">홈</a><a href="/project/">프로젝트</a><a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a><a href="/settings/account/">설정</a></nav><div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
