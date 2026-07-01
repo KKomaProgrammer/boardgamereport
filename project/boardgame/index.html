@@ -23,26 +23,55 @@
     <button class="ghost small" data-action="logout" hidden>로그아웃</button>
   </div>
   <main class="page-shell">
-
     <section class="page-title">
       <span class="eyebrow">보드게임 직접 제작</span><h1 data-project-title>프로젝트</h1>
       <div class="tabs">
         <a class="tab" data-tab="overview" href="/project/">개요</a>
         <a class="tab" data-tab="video_workspace" href="/project/video/">영상 제작<span data-tab-check="video_workspace"></span></a>
         <a class="tab" data-tab="ppt_workspace" href="/project/ppt/">PPT 제작<span data-tab-check="ppt_workspace"></span></a>
-        <a class="tab" data-tab="boardgame_workspace" href="/project/boardgame/">보드게임 제작<span data-tab-check="boardgame_workspace"></span></a>
+        <a class="tab active" data-tab="boardgame_workspace" href="/project/boardgame/">보드게임 제작<span data-tab-check="boardgame_workspace"></span></a>
         <a class="tab" data-tab="team" href="/project/team/">팀원</a>
         <a class="tab" data-tab="share" href="/project/share/">공유</a>
         <span class="save-state" data-save-state data-state="saved">저장됨</span>
       </div>
-
-    </section>
-    <section class="workspace">
-      <aside class="panel"><h2>제작 메뉴</h2><a class="side-link active">기본 정보</a><a class="side-link">규칙</a><a class="side-link">카드</a><a class="side-link">말판</a><a class="side-link">점수표</a><a class="side-link">테스트 기록</a><button class="small" data-add-card style="margin-top:12px">카드 추가</button></aside>
-      <section class="panel"><h2>게임 제작 노트</h2><div data-boardgame-editor></div></section>
-      <aside class="panel"><h2>카드 미리보기</h2><div class="grid" data-cards></div><button class="soft" data-ai-boardgame style="margin-top:12px">밸런스 문제 찾기</button><div data-ai-result style="margin-top:12px"></div></aside>
     </section>
 
+    <section class="workspace boardgame-workspace">
+      <aside class="panel">
+        <h2>제작 메뉴</h2>
+        <a class="side-link active">기본 정보</a><a class="side-link">규칙</a><a class="side-link">카드</a><a class="side-link">말판</a><a class="side-link">점수표</a><a class="side-link">테스트 기록</a>
+        <button class="small" data-add-card style="margin-top:12px">카드 추가</button>
+      </aside>
+
+      <section class="panel">
+        <h2>게임 제작 노트</h2>
+        <div data-boardgame-editor></div>
+
+        <section class="sprite-studio" aria-label="AI 스프라이트 시트 제작">
+          <div class="row" style="justify-content:space-between">
+            <div>
+              <h2>AI 스프라이트 시트</h2>
+              <p class="mini">토큰, 카드 아이콘, 말판 오브젝트를 한 장의 스프라이트 시트로 만들고 자동 분할 저장합니다.</p>
+            </div>
+            <span class="pill">프린트 시 시트 형태</span>
+          </div>
+          <div class="grid two sprite-controls">
+            <div class="field"><label>이미지 설명</label><input data-sprite-prompt placeholder="예: 중세 보드게임용 아이템 카드 아이콘, 깔끔한 벡터 스타일"></div>
+            <div class="field"><label>구성</label><select data-sprite-layout><option value="4x4">4 × 4, 16개</option><option value="3x3">3 × 3, 9개</option><option value="2x4">2 × 4, 8개</option></select></div>
+          </div>
+          <div class="row"><button data-generate-sprite>AI 스프라이트 생성</button><button class="ghost" data-cut-sprite>자동 자르기/저장</button><button class="soft" data-print-sprite>스프라이트 시트 프린트</button></div>
+          <div class="sprite-preview" data-sprite-preview><div class="empty">생성된 스프라이트 시트가 여기에 표시됩니다.</div></div>
+          <div class="sprite-pieces" data-sprite-pieces></div>
+        </section>
+      </section>
+
+      <aside class="panel">
+        <h2>카드 미리보기</h2>
+        <div class="grid" data-cards></div>
+        <button class="soft" data-ai-boardgame style="margin-top:12px">밸런스 문제 찾기</button>
+        <div data-ai-result style="margin-top:12px"></div>
+      </aside>
+    </section>
   </main>
   <nav class="mobile-nav" aria-label="모바일 메뉴">
     <a href="/dashboard/">홈</a>
@@ -50,6 +79,7 @@
     <a href="/notifications/">알림<span class="dot" data-notif-dot hidden></span></a>
     <a href="/settings/account/">설정</a>
   </nav>
+  <div class="print-area" data-print-area></div>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
